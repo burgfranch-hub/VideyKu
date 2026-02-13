@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download Video</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    padding:40px;
+    border-radius:20px;
+    width:400px;
+    text-align:center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.video-info{
+    margin-bottom:20px;
+}
+
+.video-info h2{
+    margin-bottom:10px;
+}
+
+.video-info p{
+    opacity:0.8;
+    font-size:14px;
+}
+
+.download-btn{
+    display:inline-block;
+    padding:15px 30px;
+    background:#00f2ff;
+    color:black;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:600;
+    transition:0.3s;
+    margin-top:20px;
+}
+
+.download-btn:hover{
+    background:white;
+    transform:scale(1.1);
+}
+
+.preview{
+    width:100%;
+    border-radius:15px;
+    margin-bottom:15px;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="video-info">
+        <h2>Sesuai Thumbnail</h2>
+        <p>Ukuran: 50MB | Kualitas: HD</p>
+    </div>
+
+    <!-- GANTI LINK DI BAWAH DENGAN FILE VIDEO ASLI -->
+    <a href="https://sfl.gl/qkxIRgt" class="download-btn" download>
+        Download Sekarang
+    </a>
+
+</div>
+
+</body>
+</html>

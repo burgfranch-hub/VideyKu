@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selamat Datang Di Website Videy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10%;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+}
+
+nav h1 {
+    font-weight: 600;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00f2ff;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    opacity: 0.8;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px 10%;
+    gap: 30px;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.download-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #00f2ff;
+    color: black;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.4);
+    margin-top: 50px;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">
+        <img src="logo.png" alt="VideyKu">
+    </a>
+</header>
+
+<section class="hero">
+
+<!-- SEARCH PREMIUM -->
+<div class="search-wrapper">
+    <input type="text" id="searchInput" placeholder="Cari video favorit kamu...">
+    <div class="result-count" id="resultCount"></div>
+</div>
+
+<style>
+.search-wrapper{
+    text-align:center;
+    margin:40px 0;
+}
+
+.search-wrapper input{
+    width:320px;
+    padding:14px 25px;
+    border:none;
+    border-radius:30px;
+    outline:none;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    color:white;
+    font-size:15px;
+    transition:0.3s;
+}
+
+.search-wrapper input::placeholder{
+    color:rgba(255,255,255,0.6);
+}
+
+.search-wrapper input:focus{
+    box-shadow:0 0 15px #00f2ff;
+    background: rgba(255,255,255,0.2);
+}
+
+.result-count{
+    margin-top:10px;
+    font-size:14px;
+    opacity:0.8;
+}
+.card{
+    transition:0.4s ease;
+}
+.card.hide{
+    opacity:0;
+    transform:scale(0.9);
+    pointer-events:none;
+    position:absolute;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+    const searchInput = document.getElementById("searchInput");
+    const cards = document.querySelectorAll(".card");
+    const resultCount = document.getElementById("resultCount");
+
+    if(!searchInput) return;
+
+    searchInput.addEventListener("input", function(){
+        let keyword = this.value.toLowerCase();
+        let visible = 0;
+
+        cards.forEach(card => {
+
+            let titleElement = card.querySelector("h3");
+
+            if(!titleElement) return;
+
+            let title = titleElement.textContent.toLowerCase();
+
+            if(title.includes(keyword)){
+                card.style.display = "block";
+                visible++;
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+        if(keyword === ""){
+            resultCount.textContent = "";
+        } else if(visible > 0){
+            resultCount.textContent = visible + " video ditemukan";
+        } else {
+            resultCount.textContent = "Video tidak ditemukan";
+        }
+
+    });
+
+});
+</script>
+
+     <h2>Download Sesuka Kalian</h2>
+    <p>Klik tombol di bawah untuk mengunduh video pilihan kamu</p>
+</section>
+
+    <a href="https://saweria.co/VideyKu" 
+   target="_blank" 
+   class="floating-request">
+   Request
+</a>
+
+<section class="container">
+    <div class="card">
+        <h3>Sesuai Thumbnail</h3>
+        <p>Sesuai Thumbnail</p>
+        <a href="page1.html" class="download-btn">Klik</a>
+</a>
+    </div>
+
+    <div class="card">
+        <h3>Sesuai Thumbnail</h3>
+        <p>Deskripsi singkat video</p>
+        <a href="page2.html" class="download-btn">Klik</a>
+    </div>
+
+    <div class="card">
+        <h3>Sesuai Thumbnail</h3>
+        <p>Deskripsi singkat video</p>
+        <a href="page3.html" class="download-btn">Klik</a>
+    </div> 
+
+    <div class="card">
+        <h3>Sesuai Thumbnail</h3>
+        <p>Deskripsi singkat video</p>
+        <a href="page4.html" class="download-btn">Klik</a>
+    </div>
+
+        <div class="card">
+        <h3>Sesuai Thumbnail</h3>
+        <p>Deskripsi singkat video</p>
+        <a href="page5.html" class="download-btn">Klik</a>    
+    </div>
+</section>
+
+<footer>
+    © 2026 VideyKu | All Rights Reserved
+</footer>
+
+</body>
+</html>
